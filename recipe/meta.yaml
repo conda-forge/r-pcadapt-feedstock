@@ -1,6 +1,5 @@
 {% set version = '4.3.5' %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-pcadapt
@@ -13,8 +12,7 @@ source:
   sha256: 3b61b18daafe091c13f13b49a39a9985f956e5710089d0f3a321f6887737d080
 
 build:
-  merge_build_host: True  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -25,7 +23,9 @@ requirements:
   build:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
     - {{ compiler('c') }}          # [not win]
+    - {{ stdlib("c") }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
+    - {{ stdlib("m2w64_c") }}      # [win]
     - {{ compiler('cxx') }}        # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ posix }}filesystem        # [win]
@@ -45,7 +45,6 @@ requirements:
     - r-rmio
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-rspectra
     - r-rcpp >=0.12.8
     - r-bigutilsr >=0.3
