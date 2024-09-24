@@ -1,4 +1,4 @@
-{% set version = '4.3.5' %}
+{% set version = "4.4.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/pcadapt_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/pcadapt/pcadapt_{{ version }}.tar.gz
-  sha256: 3b61b18daafe091c13f13b49a39a9985f956e5710089d0f3a321f6887737d080
+  sha256: 5abd61bd9fb91bb3adaf8df9cee9f1334e1a62f0cc7b6c922d8684e29b99baac
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -62,10 +62,7 @@ test:
 about:
   home: https://github.com/bcm-uga/pcadapt
   license: GPL-2.0-or-later
-  summary: "Methods to detect genetic markers involved in biological adaptation. 'pcadapt' provides
-    statistical tools for outlier detection based on Principal Component Analysis. Implements
-    the method described in (Luu, 2016) <DOI:10.1111/1755-0998.12592> and later revised
-    in (Priv\xE9, 2020) <DOI:10.1093/molbev/msaa053>."
+  summary: "Methods to detect genetic markers involved in biological adaptation. 'pcadapt' provides statistical tools for outlier detection based on Principal Component Analysis. Implements the method described in (Luu, 2016) <DOI:10.1111/1755-0998.12592> and later revised in (Privé, 2020) <DOI:10.1093/molbev/msaa053>."
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
