@@ -18,6 +18,7 @@ build:
     - lib/
   missing_dso_whitelist:
     - '*/R.dll'           # [win]
+  skip: true  # [ppc64le]
 
 requirements:
   build:
