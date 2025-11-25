@@ -1,4 +1,4 @@
-{% set version = "4.4.0" %}
+{% set version = "4.4.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/pcadapt_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/pcadapt/pcadapt_{{ version }}.tar.gz
-  sha256: 5abd61bd9fb91bb3adaf8df9cee9f1334e1a62f0cc7b6c922d8684e29b99baac
+  sha256: 035a60210cc4afdfafe62c564eb90646273faad1424214b5c6312cf3feab6e70
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
